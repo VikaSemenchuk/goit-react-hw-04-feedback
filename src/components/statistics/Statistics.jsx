@@ -21,9 +21,4 @@ Statistics.propTypes = {
   percent: PropTypes.number.isRequired,
 };
 
-/*
-Доброго дня)))) чи не могли б Ви підказати як можна скоротити тут запис
-проптайпів?.. це ж фактично обʼєкт чисел:
- (PropTypes.objectOf(PropTypes.number.isRequired)isRequired)
- не розумію як достукатись до самого обʼєкта props...
-*/
+// PropTypes.objectOf(PropTypes.number.isRequired).isRequired
