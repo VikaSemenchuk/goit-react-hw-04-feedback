@@ -9,8 +9,13 @@ export const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
+  
+  const feedbacks = { good, neutral, bad };
+  const keys = Object.keys(feedbacks);
+  const values = Object.values(feedbacks);
+  const total = countTotalFeedback(values);
 
-  const handlerClick = type => {
+  function handlerClick (type) {
     switch (type) {
       case 'good':
         setGood(prev => prev + 1);
@@ -29,18 +34,13 @@ export const App = () => {
     }
   };
 
-  const countTotalFeedback = array => {
+  function countTotalFeedback (array) {
     return array.reduce((acc, stateEl) => acc + stateEl, 0);
   };
 
-  const countPositiveFeedbackPercentage = (sum, number) => {
+  function countPositiveFeedbackPercentage (sum, number) {
     return sum ? Math.round((number * 100) / sum) : 0;
   };
-
-  const feedbacks = { good, neutral, bad };
-  const keys = Object.keys(feedbacks);
-  const values = Object.values(feedbacks);
-  const total = countTotalFeedback(values);
 
   return (
     <>
